@@ -2,4 +2,35 @@
 	<head>
 		<title>Homepage</title>
 	</head>
+	<body>
+		<h1>Welcome to my blog!</h1>
+		<form action="/action_page.php">
+			<select name="blog_date" id="date">
+				<optgroup label="2020">2020
+					<optgroup label="&nbsp;&nbsp;&nbsp;&nbsp;october">October
+						<option value="20">&nbsp;&nbsp;&nbsp;&nbsp;20</option>
+						<option value="21">&nbsp;&nbsp;&nbsp;&nbsp;21</option>
+					</optgroup>
+				</optgroup>
+			</select>
+
+			<button onclick="new_page()">Submit</button>
+
+			<script type="text/javascript">
+				function new_page(){
+					var list = document.getElementById("date");
+					var day = list.options[list.selectedIndex].value;
+
+					if(day == 20){
+						document.open();
+						document.write("<h1>October 20, 2020</h1> <p>Today was a weird day. I was feeling mostly good but I still have some bad moments here and there. I feel a lot better than before though so that's good. Hopefully, something good happens soon.</p>")
+					}else if(day == 21){
+						document.open();
+						document.write("<p>Yay it still worked!</p>");
+						document.close();
+					}
+				}
+			</script>
+		</form>
+	</body>
 </html>
